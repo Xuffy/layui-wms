@@ -1,0 +1,108 @@
+.lps-manage-info {
+  padding-top: 23px !important;
+  padding-left: 38px;
+  padding-right: 38px;
+  position: relative;
+}
+
+.lps-manage-info .btn-box {
+  position: absolute;
+  right: 0;
+}
+
+.lps-manage-info .btn-box .layui-btn {
+  width: 120px;
+
+}
+
+.lps-manage-info h2.title {
+  font-size: 16px;
+  color: #333333;
+  border-left: solid 5px #fab530;
+  padding-left: 7px;
+}
+
+.lps-manage-info .waterfall-box {
+  -webkit-column-width: 250px;
+  -moz-column-width: 250px;
+  -o-colum-width: 250px;
+}
+
+.lps-manage-info .function-box {
+  background-color: #f0f2f5;
+  border: solid 1px #e4e4e4;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 250px;
+  position: relative;
+  padding-top: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.lps-manage-info .function-box h5.title {
+  width: 100%;
+  border: solid 1px #a5abb7;
+  background-color: #a5abb7;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 30px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+.lps-manage-info .function-box h5.title i {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.lps-manage-info .function-box .list-item {
+  padding-bottom: 5px;
+}
+
+.lps-manage-info .function-box .list-item li {
+  padding-left: 30px;
+}
+
+.lps-manage-info .function-box .list-item li:first-child {
+  padding-left: 0;
+}
+
+.lps-manage-info .function-box .list-item .layui-form-checkbox {
+  padding-left: 30px;
+  padding-right: 0;
+}
+
+.lps-manage-info .function-box .list-item .layui-form-checkbox i {
+  left: -7px;
+}
+
+.lps-manage-info.type-info .btn-box {
+  display: none;
+}
+
+.lps-manage-info.lps-info-box.type-info input {
+  border: solid 1px #e6e6e6 !important;
+}
+
+.lps-manage-info.lps-info-box.type-info .layui-checkbox-disbaled.layui-form-checked:hover i {
+  color: #6a96df !important;
+}
+
+.lps-manage-info.lps-info-box.type-info .layui-checkbox-disbaled.layui-form-checked {
+  border-color: #6a96df !important;
+}
+
+.lps-manage-info.lps-info-box.type-info .layui-checkbox-disbaled.layui-form-checked span {
+  background-color: #6a96df !important;
+}
+
+/*
+.lps-manage-info .function-box .list-item .layui-form-checkbox span {
+  color: #a7a7a7;
+}
+
+.lps-manage-info .function-box .list-item .layui-form-checked span {
+  color: #ffffff;
+}*/

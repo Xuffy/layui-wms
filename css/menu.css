@@ -1,0 +1,89 @@
+.lps-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  z-index: 2;
+  background-color: #34393d;
+}
+
+.lps-menu .layui-nav {
+  background-color: #404549;
+  margin-bottom: 140px;
+}
+
+.lps-menu .layui-nav-tree {
+  width: 210px;
+}
+
+.lps-menu .layui-nav .layui-nav-item a {
+  padding-left: 30px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  transition: none;
+  -webkit-transition: none;
+}
+
+.lps-menu .layui-nav .layui-nav-item a i {
+  margin-right: 15px;
+}
+
+.lps-menu .layui-nav-tree .layui-nav-more {
+  right: 25px;
+  top: 50%;
+  margin-top: -6px;
+}
+
+.lps-menu .layui-nav-tree .layui-nav-child a {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 !important;
+  padding-left: 45px !important;
+  border-bottom: solid 1px #3c4044;
+}
+
+.lps-menu .layui-nav-child dd {
+  padding: 0 12px;
+  border-left: solid 3px #404549;
+}
+
+.layui-nav-item > a {
+  background-color: #34393d !important;
+}
+.layui-nav-item > a:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 186px;
+  left: 12px;
+  height: 1px;
+  background-color: #3c4044;
+}
+
+  /*.layui-nav-itemed > a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover {
+    background-color: #34393d !important;
+  }*/
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+  border-bottom-color: #6a96df !important;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+  background-color: inherit;
+}
+
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd:hover {
+  background-color: #6a96df;
+  border-left: solid 3px #fab530;
+}
+
+.layui-nav-tree .layui-nav-child dd:hover a {
+  border-bottom-color: #6a96df !important;
+}
+
+.lps-menu .layui-nav-tree .layui-nav-bar {
+  background-color: #fab530;
+  width: 3px;
+}

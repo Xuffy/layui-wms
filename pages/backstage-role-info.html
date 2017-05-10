@@ -1,0 +1,360 @@
+<section class="lps-info-default">
+  <div class="lps-info-box lps-manage-info">
+    <form class="layui-form layui-form-pane lps-form-pane">
+      <div class="layui-form-item">
+        <label class="layui-form-label">角色名称</label>
+        <div class="layui-input-inline">
+          <input type="text" name="username" lay-verify="required" placeholder="请输入新增角色名称" autocomplete="off"
+                 class="layui-input">
+        </div>
+        <button class="layui-btn btn-yellow" type="button">查询</button>
+      </div>
+      <div class="layui-form-item btn-box">
+        <div class="layui-input-block">
+          <button type="reset" class="layui-btn layui-btn-primary btn-simple-blue">重置</button>
+          <button class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
+        </div>
+      </div>
+
+      <h2 class="title">角色功能选择</h2>
+
+      <div class="waterfall-box">
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>后台用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox" checked></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox" checked></li>
+            <li>
+              <ul class="list-item">
+                <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true">
+                </li>
+                <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+                <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox" checked></li>
+                <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+                <li><input type="checkbox" name="like[game]" title="启用/禁用" lay-filter="checkbox"></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>APP用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="黑名单" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改">
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>业务设置</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员权限" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>后台用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用/禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>APP用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="黑名单" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>业务设置</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员权限" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>后台用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用/禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>APP用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="黑名单" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>业务设置</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员权限" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>后台用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用/禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="权限维护" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>APP用户管理</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="后台用户" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="禁用" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="黑名单" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+
+        <div class="function-box">
+          <h5 class="title"><i class="iconfont icon-xiangmu"></i>业务设置</h5>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员角色" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[write]" title="新增" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="修改" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="删除" lay-filter="checkbox"></li>
+          </ul>
+          <ul class="list-item">
+            <li><input type="checkbox" name="like[write]" title="实验人员权限" lay-filter="checkbox" parentCheckBox="true"></li>
+            <li><input type="checkbox" name="like[read]" title="查看" lay-filter="checkbox"></li>
+            <li><input type="checkbox" name="like[game]" title="启用" lay-filter="checkbox"></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script type="text/javascript">
+
+  layui.use(['form', 'common'], function () {
+    var form = layui.form()
+      , common = layui.common
+      , layer = layui.layer
+      , curPosition = ''
+      , boxEle = $('.lps-info-box');
+
+    // 状态判断
+    switch (common.LinkParams.type) {
+      case 'add':
+        curPosition = '新增';
+        boxEle.addClass('type-add');
+        break;
+      case 'update':
+        curPosition = '修改';
+        boxEle.addClass('type-update');
+        break;
+      case 'info':
+        curPosition = '查看';
+        boxEle.addClass('type-info').find('input[type="checkbox"]').attr('disabled', 'disabled');
+        break;
+    }
+
+    // 初始化当前位置
+    common.NavTitle(['后台用户管理', {url: 'pages/backstage-role.html', name: '后台角色'}, curPosition]);
+
+    // 渲染表单
+    form.render();
+
+    // 监听checkbox点击
+    form.on('checkbox(checkbox)', function (data) {
+      var pck = $(data.elem).parent().parent();
+
+      // 判断是否全选
+      if ($(data.elem).attr('parentCheckBox')) {
+        if (data.elem.checked) {
+          pck.find('.layui-form-checkbox').addClass('layui-form-checked');
+          _.map(pck.find('input[type="checkbox"]'), function (val) {
+            val.checked = true;
+          });
+        } else {
+          pck.find('.layui-form-checkbox').removeClass('layui-form-checked');
+          _.map(pck.find('input[type="checkbox"]'), function (val) {
+            val.checked = false;
+          });
+        }
+      } else {
+        if (!data.elem.checked) {
+          pck.find('input[parentCheckBox]').eq(0).next('.layui-form-checkbox').removeClass('layui-form-checked')[0].checked = false;
+        }
+      }
+    });
+
+    // 监听增加按钮
+    $('#add,.user-info,.user-update').on('click', function () {
+      common.MenuLink('pages/backstage-user-info.html', {type: $(this).attr('lps-type')});
+    });
+
+
+    // 监听禁用按钮
+    $('.user-delete').on('click', function () {
+      layer.confirm('确定删除此角色？', {
+        btn: ['确定', '取消']
+      }, function (index, layero) {
+        layer.msg('删除了')
+      });
+    });
+
+
+    // 监听提交按钮
+    form.on('submit(search)', function (data) {
+      layer.alert(JSON.stringify(data.field), {
+        title: '最终的提交信息'
+      });
+      return false;
+    });
+
+  });
+</script>

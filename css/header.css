@@ -1,0 +1,78 @@
+.lps-header {
+  border-bottom: none !important;
+  height: 70px;
+  background-color: #242b33;
+}
+
+.lps-header .logo {
+  position: absolute;
+  width: 210px;
+  z-index: 2;
+  line-height: 70px;
+  text-align: center;
+}
+.lps-header .logo img{
+  width: 51px;
+}
+
+.lps-header .logo:after, .lps-nav li:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 23px;
+  height: 24px;
+  width: 1px;
+  background-color: #1b222b;
+}
+
+.lps-header .layui-main {
+  margin: 0;
+}
+
+.lps-header .title {
+  font-size: 24px;
+  color: #c4c4c4;
+  position: absolute;
+  left: 235px;
+  line-height: 70px;
+}
+
+.lps-nav {
+  position: absolute;
+  right: 0;
+}
+
+.lps-nav li {
+  float: left;
+  color: #d8d8d8;
+  font-size: 14px;
+  line-height: 70px;
+  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.lps-nav li:hover,.lps-nav li:hover i {
+  color: #ffffff;
+}
+
+.lps-nav li:last-child {
+  padding-right: 30px;
+}
+
+.lps-nav li i {
+  font-size: 18px;
+  color: #242b33;
+}
+
+.lps-nav li span:first-child {
+  margin-right: 10px;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background-color: #424e5c;
+  border-radius: 50%;
+  line-height: 38px;
+  text-align: center;
+  vertical-align: middle;
+}

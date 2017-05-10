@@ -1,0 +1,298 @@
+/*字体设置*/
+@import url('../font/iconfont.css?__inline');
+/*header样式*/
+@import url('header.css?__inline');
+/*menu样式*/
+@import url('menu.css?__inline');
+/*index样式*/
+@import url('index.css?__inline');
+/*后台角色页面样式*/
+@import url('backstage-role.css?__inline');
+
+body {
+  background-color: #f5f5f5;
+}
+
+.iconfont {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.lps-module {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  padding: 70px 0 0 210px;
+}
+
+.lps-breadcrumb {
+  width: 100%;
+  height: 40px;
+  background-color: #d5d5d5;
+  line-height: 40px;
+  padding-left: 37px;
+  box-sizing: border-box;
+}
+
+.lps-breadcrumb .layui-breadcrumb a {
+  color: #666666;
+}
+
+.lps-breadcrumb .layui-breadcrumb a cite, .lps-breadcrumb .layui-breadcrumb a:hover {
+  color: #5091ca !important;
+}
+
+.lps-content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/*详细页面*/
+.lps-info-default {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 20px 24px 115px 24px;
+}
+
+.lps-info-default .lps-info-box {
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 100%;
+  border: solid 1px #cccccc;
+  padding-top: 44px;
+  box-sizing: border-box;
+}
+
+.lps-info-default .layui-form-item {
+  display: inline-block;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+.lps-info-default .layui-form-select {
+  width: 182px;
+}
+
+.lps-info-default .lps-input-required:after {
+  content: '*';
+  color: #f9656b;
+  position: absolute;
+  right: -15px;
+  top: 10px;
+  font-size: 24px;
+}
+
+.lps-info-default .form-btn-box .layui-btn {
+  width: 120px;
+}
+
+.lps-info-default .form-btn-box {
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.lps-info-default .form-btn-box .layui-input-block {
+  margin-left: 0;
+}
+
+/******相信类型判断*/
+.lps-info-default .lps-info-box.type-info input {
+  border: 0;
+  border-bottom: solid 1px #e6e6e6;
+  color: #666 !important;
+}
+
+.lps-info-default .lps-info-box.type-info .lps-input-required:after,
+.lps-info-default .lps-info-box.type-info .layui-edge,
+.lps-info-default .lps-info-box.type-info .layui-form-radio,
+.lps-info-default .lps-info-box.type-info .layui-form-radioed i,
+.lps-info-default .lps-info-box.type-info .form-btn-box,
+.lps-info-default .lps-info-box.type-update .update-hide,
+.lps-info-default .lps-info-box.type-add .add-hide,
+.lps-list-default .table-operation:last-child:before {
+  display: none;
+}
+
+.lps-info-default .lps-info-box.type-info .layui-form-radioed {
+  display: inline-block !important;
+  color: #666666 !important;
+}
+
+/*按钮样式*/
+.lps-content .btn-yellow {
+  margin-left: 20px;
+  background-color: #fab530;
+  width: 100px;
+  font-size: 12px;
+}
+
+.lps-content .btn-simple-blue {
+  font-size: 12px;
+  color: #3678c2;
+  width: 120px;
+  border-color: #3678c2;
+}
+
+.lps-content .btn-simple-blue i {
+  margin-right: 5px;
+}
+
+.lps-welcome {
+  background-image: url("../img/welcome-back.png");
+  width: 677px;
+  height: 341px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  margin-top: -171px;
+  margin-left: -339px;
+}
+
+/*列表*/
+.lps-list-default {
+  padding: 0 25px;
+}
+
+.lps-list-default .layui-table thead {
+  border: solid 1px #a5abb7;
+  border-bottom: 0;
+}
+
+.lps-list-default .layui-table th {
+  padding: 0;
+  line-height: 30px;
+  background-color: #a5abb7;
+  color: #ffffff;
+  font-weight: 100;
+  text-align: center;
+  border: 0;
+}
+
+.lps-list-default .layui-table td {
+  line-height: 50px;
+  padding: 0;
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+}
+
+.lps-list-default .layui-table td {
+  border: 0;
+  border-right: solid 1px #eaeaea;
+}
+
+.lps-list-default .layui-table tr td:last-child {
+  border-right: 0;
+}
+
+.lps-list-default .layui-table tbody tr:nth-child(2n) {
+  background-color: #f0f2f5;
+}
+
+.lps-list-default .layui-table tbody {
+  border: solid 1px #cccccc;
+  border-top: 0;
+}
+
+.lps-list-default .table-operation-box {
+  width: 280px;
+}
+
+.lps-list-default .table-operation-box .layui-icon,
+.lps-list-default .table-operation i.icon-chakan {
+  font-size: 20px;
+}
+
+.lps-list-default .table-operation {
+  cursor: pointer;
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  color: #62a6e1;
+  vertical-align: middle;
+  position: relative;
+}
+
+.lps-list-default .table-operation:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 16px;
+  background-color: rgba(99, 166, 225, .3);
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.lps-list-default .table-operation i {
+  font-size: 16px;
+}
+
+.lps-page-default {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*重置表单样式*/
+.layui-form-pane.lps-form-pane .layui-form-label {
+  border-color: #6a96df;
+  background-color: #6a96df;
+  width: auto;
+  color: #ffffff;
+}
+
+/*顶部操作栏*/
+.lps-operation-bar {
+  padding: 17px 45px;
+  background-color: #ffffff;
+  border: solid 1px #e5e5e5;
+  border-top: none;
+}
+
+.lps-operation-bar .layui-form-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.lps-operation-bar .layui-input-block {
+  margin-left: 0;
+}
+
+.lps-operation-bar .item-right {
+  float: right;
+  margin-right: 0;
+}
+
+.lps-operation-bar .layui-form {
+  display: inline-block;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #bbbbbb;
+}
