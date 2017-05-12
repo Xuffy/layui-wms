@@ -1,40 +1,53 @@
 'use strict';
 
+
 fis.hook('relative');
 
-fis.set('fileURL', './dist');
+fis
+  .match('**', {relative: true})
+  .set('project.ignore', ['live/**', 'fis-conf.js', 'mock/**', 'build/**', 'README.md', 'package.json'])
+  .match(/^\/src\/(.*)$/i, {
+    useCache: false,
+    release: '/static/$1'
+  })
+  .match('/src/app.js', {
+    release: false
+  })
+  .match('/src/index.html', {
+    release: '/index$1'
+  });
+// .match('**.{png,jpg,gif}', {optimizer: fis.plugin('png-compressor')});
 
 
-fis.set('project.ignore', [
-  'dist/**',
-  'fis-conf.js'
-]).match('::image', {
-  useHash: true
-}).match('*.js', {
-  // optimizer: fis.plugin('uglify-js')
-}).match('*.css', {
-  optimizer: fis.plugin('clean-css')
-}).match('*.png', {
-  optimizer: fis.plugin('png-compressor')
-});
+fis
+  .media('dev')
+  .match('*', {
+    deploy: [
+      fis.plugin('replace', {
+        from: '__fis.mock.base',
+        to: ''
+      }),
+      fis.plugin('local-deliver', {
+        to: './live'
+      })
+    ]
+  });
+
 
 fis
   .media('pro')
-  .set('project.ignore', [
-    'dist/**',
-    'fis-conf.js'
-  ]).match('**', {
-  relative: true
-}).match('*.js', {
-  optimizer: fis.plugin('uglify-js')
-}).match('*.css', {
-  optimizer: fis.plugin('clean-css')
-}).match('*.png', {
-  optimizer: fis.plugin('png-compressor')
-}).match('**', {
-  deploy: fis.plugin('local-deliver', {
-    to: fis.get('fileURL')
+  .match('*.js', {
+    optimizer: fis.plugin('uglify-js')
   })
-}).match('::image', {
-  useHash: true
-});
+  .match('*.css', {optimizer: fis.plugin('clean-css')})
+  .match('*', {
+    deploy: [
+      fis.plugin('replace', {
+        from: '__fis.mock.base',
+        to: ''
+      }),
+      fis.plugin('local-deliver', {
+        to: './build'
+      })
+    ]
+  });

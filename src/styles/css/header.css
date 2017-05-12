@@ -1,21 +1,21 @@
-.lps-header {
+.dx-header {
   border-bottom: none !important;
   height: 70px;
   background-color: #242b33;
 }
 
-.lps-header .logo {
+.dx-header .logo {
   position: absolute;
   width: 210px;
   z-index: 2;
   line-height: 70px;
   text-align: center;
 }
-.lps-header .logo img{
+.dx-header .logo img{
   width: 51px;
 }
 
-.lps-header .logo:after, .lps-nav li:after {
+.dx-header .logo:after, .dx-nav li:after {
   content: '';
   position: absolute;
   right: 0;
@@ -25,11 +25,11 @@
   background-color: #1b222b;
 }
 
-.lps-header .layui-main {
+.dx-header .layui-main {
   margin: 0;
 }
 
-.lps-header .title {
+.dx-header .title {
   font-size: 24px;
   color: #c4c4c4;
   position: absolute;
@@ -37,12 +37,12 @@
   line-height: 70px;
 }
 
-.lps-nav {
+.dx-nav {
   position: absolute;
   right: 0;
 }
 
-.lps-nav li {
+.dx-nav li {
   float: left;
   color: #d8d8d8;
   font-size: 14px;
@@ -52,20 +52,20 @@
   cursor: pointer;
 }
 
-.lps-nav li:hover,.lps-nav li:hover i {
+.dx-nav li:hover,.dx-nav li:hover i {
   color: #ffffff;
 }
 
-.lps-nav li:last-child {
+.dx-nav li:last-child {
   padding-right: 30px;
 }
 
-.lps-nav li i {
+.dx-nav li i {
   font-size: 18px;
   color: #242b33;
 }
 
-.lps-nav li span:first-child {
+.dx-nav li span:first-child {
   margin-right: 10px;
   display: inline-block;
   width: 38px;

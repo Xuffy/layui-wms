@@ -1,15 +1,15 @@
-<section class="lps-info-default">
-  <div class="lps-info-box">
+<section class="dx-info-default">
+  <div class="dx-info-box">
     <form class="layui-form" action="">
       <div class="layui-form-item">
         <label class="layui-form-label">账户名称</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="text" name="user" lay-verify="required" autocomplete="off" placeholder="" class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">姓名</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="text" name="name" lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
         </div>
       </div>
@@ -24,7 +24,7 @@
 
       <div class="layui-form-item">
         <label class="layui-form-label">手机</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="text" name="phone" lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
         </div>
       </div>
@@ -38,7 +38,7 @@
 
       <div class="layui-form-item">
         <label class="layui-form-label">所属角色</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <select name="role">
             <option value="">选择角色</option>
             <option value="0">角色A</option>
@@ -48,7 +48,7 @@
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">所属部门</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="text" name="department" lay-verify="required" placeholder="" autocomplete="off"
                  class="layui-input">
         </div>
@@ -63,14 +63,14 @@
 
       <div class="layui-form-item">
         <label class="layui-form-label">密码</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="password" name="password" lay-verify="required" autocomplete="off" placeholder=""
                  class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">确认密码</label>
-        <div class="layui-input-block lps-input-required">
+        <div class="layui-input-block dx-input-required">
           <input type="password" name="confirmPassword" lay-verify="required" placeholder="" autocomplete="off"
                  class="layui-input">
         </div>
@@ -89,14 +89,14 @@
 </section>
 
 <script>
-  layui.use(['common', 'form'], function () {
-    var common = layui.common
+  layui.use(['_route', 'form'], function () {
+    var _route = layui._route
       , form = layui.form()
       , curPosition = ''
-      , boxEle = $('.lps-info-box');
+      , boxEle = $('.dx-info-box');
 
     // 状态判断
-    switch (common.LinkParams.type) {
+    switch (_route.params.type) {
       case 'add':
         curPosition = '新增';
         boxEle.addClass('type-add');
@@ -115,7 +115,7 @@
     form.render();
 
     // 初始化当前位置
-    common.NavTitle(['后台用户管理', {url: 'pages/backstage-user.html', name: '后台用户'}, curPosition]);
+    _route.setBreadcrumb(['后台用户管理', {url: 'pages/backstage-user.html', name: '后台用户'}, curPosition]);
 
     // 自定义验证规则
     form.verify({

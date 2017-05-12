@@ -8,7 +8,7 @@ body {
 }
 
 .login-logo i {
-  background-image: url("../img/login-logo.png");
+  background-image: url("../../images/login-logo.png");
   background-size: 100% 100%;
   width: 528px;
   height: 87px;
@@ -20,7 +20,7 @@ body {
 }
 
 .login-middle {
-  background-image: url("../img/login-back.jpg");
+  background-image: url("../../images/login-back.jpg");
   width: 100%;
   height: 688px;
   background-position: center;
@@ -28,7 +28,7 @@ body {
 }
 
 .login-middle .content {
-  background-image: url("../img/login-content-back.png");
+  background-image: url("../../images/login-content-back.png");
   width: 526px;
   height: 466px;
   top: 50%;

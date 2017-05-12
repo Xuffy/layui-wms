@@ -303,7 +303,7 @@
     }
 
     // 初始化当前位置
-    _route.setBreadcrumb(['后台用户管理', {url: 'pages/backstage-role.html', name: '后台角色'}, curPosition]);
+    _route.setBreadcrumb(['后台用户管理', {url: 'modules/backstage.user/index.html', name: '后台角色'}, curPosition]);
 
     // 渲染表单
     form.render();
@@ -334,7 +334,7 @@
 
     // 监听增加按钮
     $('#add,.user-info,.user-update').on('click', function () {
-      _route.goMenu('pages/backstage-user-info.html', {type: $(this).attr('dx-type')});
+      _route.goMenu('modules/backstage.user.info/index.html', {type: $(this).attr('dx-type')});
     });
 
 

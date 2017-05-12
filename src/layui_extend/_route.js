@@ -1,23 +1,23 @@
 'use strict';
 
 layui.define(function (exports) {
-  var common = {
-    LinkParams: {} // 跳转链接参数
+  var _route = {
+    params: {} // 跳转链接参数
   };
 
   /**
-   * 面包屑导航
+   * 设置面包屑导航
    * @param params
    * @param setting
    * @constructor
    */
-  common.NavTitle = function (params, setting) {
+  _route.setBreadcrumb = function (params, setting) {
     var htmlStr = '', set = setting || {};
 
     if (set.hide) {
-      return $('.lps-breadcrumb').addClass('layui-hide');
+      return $('.dx-breadcrumb').addClass('layui-hide');
     } else {
-      $('.lps-breadcrumb').removeClass('layui-hide');
+      $('.dx-breadcrumb').removeClass('layui-hide');
     }
 
     if (!_.isEmpty(params)) {
@@ -41,10 +41,10 @@ layui.define(function (exports) {
       $('.layui-breadcrumb').html(htmlStr);
 
       // 监听面包屑导航点击
-      $('.lps-breadcrumb a').on('click', function () {
+      $('.dx-breadcrumb a').on('click', function () {
         var url = $(this).attr('url');
         if (!_.isEmpty(url)) {
-          common.MenuLink(url);
+          _route.goMenu(url);
         }
       });
     }
@@ -56,17 +56,17 @@ layui.define(function (exports) {
    * @param urlParams    传递参数
    * @constructor
    */
-  common.MenuLink = function (url, urlParams) {
+  _route.goMenu = function (url, urlParams) {
     var shade = $('.index-shade-ban');
 
     // 显示遮罩层
     shade.removeClass('layui-hide');
 
     // 初始化链接参数
-    common.LinkParams = {};
+    _route.params = {};
 
     if (!_.isEmpty(urlParams)) {
-      common.LinkParams = urlParams; // 链接参数赋值
+      _route.params = urlParams; // 链接参数赋值
     }
 
     // 请求页面
@@ -77,12 +77,12 @@ layui.define(function (exports) {
         shade.addClass('layui-hide'); // 取消遮罩层
       },
       success: function (data) {
-        $('#lps-content').html(data);
+        $('#dx-content').html(data);
       }
     });
   };
 
 
-  //输出common接口
-  exports('common', common);
+  //输出_route接口
+  exports('_route', _route);
 });

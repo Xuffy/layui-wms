@@ -1,0 +1,22 @@
+{
+  "name": "dx-system-template",
+  "version": "0.0.1",
+  "author": "d.xuffy",
+  "description": "dx后台系统管理模版",
+  "main": "fis-conf.js",
+  "homepage": "https://github.com/Xuffy/dx-system-template",
+  "bugs": {
+    "url": "https://github.com/Xuffy/dx-system-template/issues",
+    "email": "d.xuffy@gamil.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "server": "fis3 server start --root ./live",
+    "dev": "fis3 release dev -Lw",
+    "pro": "fis3 release pro"
+  },
+  "directories": {
+    "src": "./src",
+    "build": "./build"
+  }
+}

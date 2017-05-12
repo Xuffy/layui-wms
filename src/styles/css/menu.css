@@ -1,4 +1,4 @@
-.lps-menu {
+.dx-menu {
   position: fixed;
   top: 70px;
   left: 0;
@@ -8,16 +8,16 @@
   background-color: #34393d;
 }
 
-.lps-menu .layui-nav {
+.dx-menu .layui-nav {
   background-color: #404549;
   margin-bottom: 140px;
 }
 
-.lps-menu .layui-nav-tree {
+.dx-menu .layui-nav-tree {
   width: 210px;
 }
 
-.lps-menu .layui-nav .layui-nav-item a {
+.dx-menu .layui-nav .layui-nav-item a {
   padding-left: 30px;
   height: 50px;
   line-height: 50px;
@@ -26,17 +26,17 @@
   -webkit-transition: none;
 }
 
-.lps-menu .layui-nav .layui-nav-item a i {
+.dx-menu .layui-nav .layui-nav-item a i {
   margin-right: 15px;
 }
 
-.lps-menu .layui-nav-tree .layui-nav-more {
+.dx-menu .layui-nav-tree .layui-nav-more {
   right: 25px;
   top: 50%;
   margin-top: -6px;
 }
 
-.lps-menu .layui-nav-tree .layui-nav-child a {
+.dx-menu .layui-nav-tree .layui-nav-child a {
   height: 40px;
   line-height: 40px;
   padding: 0 !important;
@@ -44,7 +44,7 @@
   border-bottom: solid 1px #3c4044;
 }
 
-.lps-menu .layui-nav-child dd {
+.dx-menu .layui-nav-child dd {
   padding: 0 12px;
   border-left: solid 3px #404549;
 }
@@ -83,7 +83,7 @@
   border-bottom-color: #6a96df !important;
 }
 
-.lps-menu .layui-nav-tree .layui-nav-bar {
+.dx-menu .layui-nav-tree .layui-nav-bar {
   background-color: #fab530;
   width: 3px;
 }
