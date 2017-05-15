@@ -1,6 +1,6 @@
-labpooSystem
+WMS(网站管理系统)
 ---
-后台管理系统（含权限分配）
+...
 
 依赖模块
 ===
@@ -20,10 +20,11 @@ $ npm i -g fis3
 // 进入项目根目录
 $ cd **
 
+// 启动服务
+$ npm run server
 // 开发调试
-$ fis3 server start
-$ fis3 release -Lw
+$ npm run dev
 
 // 发布项目
-$ fis3 release pro
+$ npm run pro
 ```
