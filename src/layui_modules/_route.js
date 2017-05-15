@@ -2,7 +2,41 @@
 
 layui.define(function (exports) {
   var _route = {
-    params: {} // 跳转链接参数
+    params: {}, // 跳转链接参数
+    config: {} // 路由跳转配置
+  };
+
+
+  /**
+   * 左边菜单跳转
+   * @param url          跳转地址
+   * @param urlParams    传递参数
+   * @constructor
+   */
+  _route.goMenu = function (url, urlParams) {
+    var shade = $('.index-shade-ban');
+
+    // 显示遮罩层
+    shade.removeClass('layui-hide');
+
+    // 初始化链接参数
+    _route.params = {};
+
+    if (!_.isEmpty(urlParams)) {
+      _route.params = urlParams; // 链接参数赋值
+    }
+
+    // 请求页面
+    $.ajax({
+      url: url,
+      type: 'GET',
+      complete: function () {
+        shade.addClass('layui-hide'); // 取消遮罩层
+      },
+      success: function (data) {
+        $('#dx-content').html(data);
+      }
+    });
   };
 
   /**
@@ -49,39 +83,6 @@ layui.define(function (exports) {
       });
     }
   };
-
-  /**
-   * 左边菜单跳转
-   * @param url          跳转地址
-   * @param urlParams    传递参数
-   * @constructor
-   */
-  _route.goMenu = function (url, urlParams) {
-    var shade = $('.index-shade-ban');
-
-    // 显示遮罩层
-    shade.removeClass('layui-hide');
-
-    // 初始化链接参数
-    _route.params = {};
-
-    if (!_.isEmpty(urlParams)) {
-      _route.params = urlParams; // 链接参数赋值
-    }
-
-    // 请求页面
-    $.ajax({
-      url: url,
-      type: 'GET',
-      complete: function () {
-        shade.addClass('layui-hide'); // 取消遮罩层
-      },
-      success: function (data) {
-        $('#dx-content').html(data);
-      }
-    });
-  };
-
 
   //输出_route接口
   exports('_route', _route);

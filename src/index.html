@@ -161,6 +161,7 @@
 
 <script type="text/javascript" src="plugins/layui/layui.js"></script>
 <script type="text/javascript" src="plugins/underscore-min.js"></script>
+<script type="text/javascript" src="javascript/prototype.js?__inline"></script>
 <script type="text/javascript" src="app.js?__inline"></script>
 <script type="text/javascript">
   layui.use(['layer', 'element', '_route', 'form'], function () {
@@ -185,7 +186,7 @@
     // 监听导航点击
     element.on('nav(menu)', function (elem) {
       var mUrl = elem.attr('dx-menu');
-      !_.isEmpty(mUrl) && _route.goMenu('static/' + mUrl);
+      !_.isEmpty(mUrl) && _route.goMenu(mUrl);
     });
 
     // 监听修改密码提交

@@ -8,7 +8,7 @@ fis
   .set('project.ignore', ['live/**', 'fis-conf.js', 'mock/**', 'build/**', 'README.md', 'package.json'])
   .match(/^\/src\/(.*)$/i, {
     useCache: false,
-    release: '/static/$1'
+    release: '/$1'
   })
   .match('/src/app.js', {
     release: false
@@ -24,8 +24,8 @@ fis
   .match('*', {
     deploy: [
       fis.plugin('replace', {
-        from: '__fis.mock.base',
-        to: ''
+        from: '__fis.env',
+        to: 'develop'
       }),
       fis.plugin('local-deliver', {
         to: './live'
@@ -43,8 +43,8 @@ fis
   .match('*', {
     deploy: [
       fis.plugin('replace', {
-        from: '__fis.mock.base',
-        to: ''
+        from: '__fis.env',
+        to: 'production'
       }),
       fis.plugin('local-deliver', {
         to: './build'

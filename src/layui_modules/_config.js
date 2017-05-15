@@ -15,7 +15,7 @@ layui.define(function (exports) {
       api: '/labpoo/',
       imageUrl: '/labpoo/system/showPic/'
     }
-  }['__fis.env' === '' ? 'develop' : 'production'];
+  }['__fis.env'];
 
 
   //输出config接口

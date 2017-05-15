@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "server": "fis3 server start --root ./live",
-    "dev": "fis3 release dev -Lw",
+    "dev": "fis3 release -cLw dev",
     "pro": "fis3 release pro"
   },
   "directories": {

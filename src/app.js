@@ -6,7 +6,7 @@
    * 加载模块
    */
   layui.config({
-    base: 'static/layui_extend/'
+    base: 'layui_modules/'
   }).extend({
     _route: '_route', // 通用模块
     _ajax: '_ajax', // ajax请求模块
@@ -14,4 +14,5 @@
   });
 
 
+  console.log()
 })();
