@@ -19,7 +19,7 @@
       <ul class="dx-nav">
         <li>欢迎您，Betty</li>
         <li id="updatePassword-btn"><span><i class="iconfont icon-moban162"></i></span><span>修改密码</span></li>
-        <li onclick="window.location.href='src/login.html'"><span><i
+        <li onclick="window.location.href='modules/login/index.html'"><span><i
           class="iconfont icon-tuichu"></i></span><span>退出登录</span></li>
       </ul>
     </div>
@@ -34,9 +34,9 @@
         <i class="iconfont icon-suo"></i><span class="menu-title">后台用户管理</span>
       </a>
       <dl class="layui-nav-child">
-        <dd dx-menu="modules/backstage.user/index.html"><a href="javascript:;">后台用户</a></dd>
-        <dd dx-menu="modules/backstage.role/index.html"><a href="javascript:;">后台角色</a></dd>
-        <dd dx-menu="modules/rights.management/index.html"><a href="javascript:;">权限维护</a></dd>
+        <dd dx-menu="backstage.user"><a href="javascript:;">后台用户</a></dd>
+        <dd dx-menu="backstage.role"><a href="javascript:;">后台角色</a></dd>
+        <dd dx-menu="rights.management"><a href="javascript:;">权限维护</a></dd>
       </dl>
     </li>
     <li class="layui-nav-item">
@@ -160,8 +160,9 @@
 <div class="index-shade-ban layui-hide"></div>
 
 <script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script type="text/javascript" src="plugins/vue.js"></script>
 <script type="text/javascript" src="plugins/underscore-min.js"></script>
-<script type="text/javascript" src="javascript/prototype.js?__inline"></script>
+<script type="text/javascript" src="javascript/main.js?__inline"></script>
 <script type="text/javascript" src="app.js?__inline"></script>
 <script type="text/javascript">
   layui.use(['layer', 'element', '_route', 'form'], function () {
@@ -186,7 +187,7 @@
     // 监听导航点击
     element.on('nav(menu)', function (elem) {
       var mUrl = elem.attr('dx-menu');
-      !_.isEmpty(mUrl) && _route.goMenu(mUrl);
+      !_.isEmpty(mUrl) && _route.go(mUrl);
     });
 
     // 监听修改密码提交

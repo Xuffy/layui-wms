@@ -6,8 +6,6 @@
 @import url('menu.css?__inline');
 /*index样式*/
 @import url('index.css?__inline');
-/*后台角色页面样式*/
-@import url('backstage-role.css?__inline');
 
 body {
   background-color: #f5f5f5;

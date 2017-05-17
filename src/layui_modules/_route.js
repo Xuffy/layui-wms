@@ -2,8 +2,10 @@
 
 layui.define(function (exports) {
   var _route = {
-    params: {}, // 跳转链接参数
-    config: {} // 路由跳转配置
+    params: {}, // 当前页面地址参数
+    config: { // 路由跳转配置
+      base: '' // 模块路径配置
+    }
   };
 
 
@@ -13,7 +15,7 @@ layui.define(function (exports) {
    * @param urlParams    传递参数
    * @constructor
    */
-  _route.goMenu = function (url, urlParams) {
+  _route.go = function (url, urlParams) {
     var shade = $('.index-shade-ban');
 
     // 显示遮罩层
@@ -25,6 +27,8 @@ layui.define(function (exports) {
     if (!_.isEmpty(urlParams)) {
       _route.params = urlParams; // 链接参数赋值
     }
+
+    url = this.config.base ? this.config.base.format(url) : url;
 
     // 请求页面
     $.ajax({
@@ -78,7 +82,7 @@ layui.define(function (exports) {
       $('.dx-breadcrumb a').on('click', function () {
         var url = $(this).attr('url');
         if (!_.isEmpty(url)) {
-          _route.goMenu(url);
+          _route.go(url);
         }
       });
     }

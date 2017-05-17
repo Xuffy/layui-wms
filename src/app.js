@@ -6,6 +6,7 @@
    * 加载模块
    */
   layui.config({
+    version: true,
     base: 'layui_modules/'
   }).extend({
     _route: '_route', // 通用模块
@@ -13,6 +14,12 @@
     _config: '_config' // 配置模块
   });
 
+  layui.use(['_route'], function () {
+    var _route = layui._route;
 
-  console.log()
+    // 模块路由配置
+    _route.config.base = 'modules/{0}/index.html';
+
+  });
+
 })();
