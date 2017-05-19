@@ -1,6 +1,6 @@
 {
   "name": "dx-system-template",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "author": "d.xuffy",
   "description": "dx后台系统管理模版",
   "main": "fis-conf.js",

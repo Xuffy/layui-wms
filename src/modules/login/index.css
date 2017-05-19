@@ -123,12 +123,14 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
-.login-middle .code span:hover{
+
+.login-middle .code span:hover {
   text-decoration: underline;
 }
-.login-middle .btn-login{
-  border: 0!important;
-  background-color: #fab530!important;
+
+.login-middle .btn-login {
+  border: 0 !important;
+  background-color: #fab530 !important;
   color: #ffffff;
   border-radius: 5px;
   line-height: 45px;
@@ -136,7 +138,8 @@ body {
   cursor: pointer;
   position: relative;
 }
-.login-middle .btn-login:hover:before{
+
+.login-middle .btn-login:hover:before {
   content: '';
   position: absolute;
   width: 100%;
@@ -144,12 +147,12 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0, 0, 0, .1);
 }
 
 .login-footer {
   width: 100%;
-  font-size: 16px;
+  font-size: 12px;
   color: #666666;
   padding-top: 30px;
   text-align: center;
