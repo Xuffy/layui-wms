@@ -37,7 +37,7 @@ fis
 fis
   .media('pro')
   .match('*.js', {
-    optimizer: fis.plugin('uglify-js')
+    // optimizer: fis.plugin('uglify-js')
   })
   .match('*.css', {optimizer: fis.plugin('clean-css')})
   .match('*', {

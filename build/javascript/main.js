@@ -1,1 +1,32 @@
-"use strict";String.prototype.format=function(e){if(arguments.length>0){var r=this;if(1==arguments.length&&"object"==typeof e)for(var t in e)r=r.replace(new RegExp("({"+t+"})","g"),e[t]);else for(var n=0;n<arguments.length;n++){if(void 0==arguments[n])return"";var g=new RegExp("({["+n+"]})","g");r=r.replace(g,arguments[n])}return r}return this};
+'use strict';
+
+/**
+ * 字符串拼接
+ * @param args
+ * @returns {*}
+ */
+String.prototype.format = function (args) {
+  if (arguments.length > 0) {
+    var result = this;
+    if (arguments.length == 1 && typeof (args) == "object") {
+      for (var key in args) {
+        result = result.replace(new RegExp("({" + key + "})", "g"), args[key]);
+      }
+    }
+    else {
+      for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] == undefined) {
+          return "";
+        }
+        else {
+          var reg = new RegExp("({[" + i + "]})", "g");
+          result = result.replace(reg, arguments[i]);
+        }
+      }
+    }
+    return result;
+  }
+  else {
+    return this;
+  }
+};

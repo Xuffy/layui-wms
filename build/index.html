@@ -164,8 +164,63 @@
 
 <script type="text/javascript" src="plugins/layui/layui.js"></script>
 <script type="text/javascript" src="plugins/underscore-min.js"></script>
-<script type="text/javascript">"use strict";String.prototype.format=function(e){if(arguments.length>0){var r=this;if(1==arguments.length&&"object"==typeof e)for(var t in e)r=r.replace(new RegExp("({"+t+"})","g"),e[t]);else for(var n=0;n<arguments.length;n++){if(void 0==arguments[n])return"";var g=new RegExp("({["+n+"]})","g");r=r.replace(g,arguments[n])}return r}return this};</script>
-<script type="text/javascript">"use strict";!function(){layui.config({version:!0,base:"layui_modules/"}).extend({_route:"_route",_ajax:"_ajax",_config:"_config"}),layui.use(["_route"],function(){var e=layui._route;e.config.base="modules/{0}/index.html"})}();</script>
+<script type="text/javascript">'use strict';
+
+/**
+ * 字符串拼接
+ * @param args
+ * @returns {*}
+ */
+String.prototype.format = function (args) {
+  if (arguments.length > 0) {
+    var result = this;
+    if (arguments.length == 1 && typeof (args) == "object") {
+      for (var key in args) {
+        result = result.replace(new RegExp("({" + key + "})", "g"), args[key]);
+      }
+    }
+    else {
+      for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] == undefined) {
+          return "";
+        }
+        else {
+          var reg = new RegExp("({[" + i + "]})", "g");
+          result = result.replace(reg, arguments[i]);
+        }
+      }
+    }
+    return result;
+  }
+  else {
+    return this;
+  }
+};</script>
+<script type="text/javascript">'use strict';
+
+(function () {
+
+  /**
+   * 加载模块
+   */
+  layui.config({
+    version: true,
+    base: 'layui_modules/'
+  }).extend({
+    _route: '_route', // 通用模块
+    _ajax: '_ajax', // ajax请求模块
+    _config: '_config' // 配置模块
+  });
+
+  layui.use(['_route'], function () {
+    var _route = layui._route;
+
+    // 模块路由配置
+    _route.config.base = 'modules/{0}/index.html';
+
+  });
+
+})();</script>
 <script type="text/javascript">
   layui.use(['layer', 'element', '_route', 'form'], function () {
     var layer = layui.layer

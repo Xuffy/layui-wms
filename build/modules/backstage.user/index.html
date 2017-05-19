@@ -185,4 +185,67 @@
 </section>
 
 <!--脚本-->
-<script type="text/javascript">"use strict";layui.use(["form","laypage","_route"],function(){var e=layui.form(),n=layui.laypage,t=layui._route,r=layui.layer;t.setBreadcrumb(["后台用户管理","后台用户"]),e.render(),e.verify({username:function(e){return e.length>20?"用户名称过长，请重新输入":void 0},phone:function(e){return e&&(e.length>11||e.length<6)?"请输入正确的联系方式":void 0}}),n({cont:"dx-page-default",pages:20,first:1,jump:function(e){r.msg("显示第"+e.curr+"页")}}),$("#add,.user-info,.user-update").on("click",function(){t.go("backstage.user.info",{type:$(this).attr("dx-type")})}),$(".user-ban").on("click",function(){r.confirm("确定禁用此账户吗？",{btn:["确定","取消"]},function(){r.msg("禁用了")})}),e.on("submit(search)",function(e){return r.alert(JSON.stringify(e.field),{title:"最终的提交信息"}),!1})});</script>
+<script type="text/javascript">'use strict';
+
+layui.use(['form', 'laypage', '_route'], function () {
+  var form = layui.form()
+    , laypage = layui.laypage
+    , _route = layui._route
+    , layer = layui.layer;
+
+  // 初始化当前位置
+  _route.setBreadcrumb(['后台用户管理', '后台用户']);
+
+  // 渲染表单
+  form.render();
+
+  // 自定义验证规则
+  form.verify({
+    username: function (value) {
+      if (value.length > 20) {
+        return '用户名称过长，请重新输入';
+      }
+    },
+    phone: function (value) {
+      if (value && (value.length > 11 || value.length < 6)) {
+        return '请输入正确的联系方式';
+      }
+    }
+  });
+
+  // 分页初始化
+  laypage({
+    cont: 'dx-page-default'
+    , pages: 20
+    , first: 1
+    , jump: function (data) {
+      layer.msg('显示第' + data.curr + '页');
+    }
+  });
+
+
+  // 监听增加按钮
+  $('#add,.user-info,.user-update').on('click', function () {
+    _route.go('backstage.user.info', {type: $(this).attr('dx-type')});
+  });
+
+
+  // 监听禁用按钮
+  $('.user-ban').on('click', function () {
+    layer.confirm('确定禁用此账户吗？', {
+      btn: ['确定', '取消'] //可以无限个按钮
+    }, function (index, layero) {
+      layer.msg('禁用了')
+    });
+  });
+
+
+  // 监听提交按钮
+  form.on('submit(search)', function (data) {
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    });
+    return false;
+  });
+
+});</script>
