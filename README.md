@@ -36,17 +36,17 @@ $ npm run pro
 
 更新日志
 ===
-#### v0.0.4
+### v0.0.4
 * 请求时增加进度条显示。
 
-#### v0.0.3
+### v0.0.3
 * 解决github文件名不能以“_”开头。
 
-#### v0.0.2
+### v0.0.2
 * 扩展layui模块ajax.js，基于jquery封装ajax请求，支持`_ajax.get`、`_ajax.post`请求。过滤返回参数，监听请求异常。
 * 扩展layui模块config.js，在`_config.dev`中可设置环境变量，在`fis-conf.js`文件中会根据不同环境获取对应配置参数。
 
-#### v0.0.1
+### v0.0.1
 * 扩展layui模块route.js，`支持左边菜单跳转`、`设置面包屑导航`，在`_route.params`里可获取地址参数(JSON格式)，在`_route.config`里可设置模块路径配置。
 * 模块化业务模块，modules目录下每个文件夹对应一个业务。
 
