@@ -33,6 +33,8 @@ body {
   line-height: 40px;
   padding-left: 37px;
   box-sizing: border-box;
+  position: absolute;
+  z-index: 9;
 }
 
 .dx-breadcrumb .layui-breadcrumb a {
@@ -48,6 +50,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   overflow-y: auto;
+  padding-top: 40px;
   padding-bottom: 40px;
   position: relative;
 }
@@ -102,7 +105,7 @@ body {
   margin-left: 0;
 }
 
-/******相信类型判断*/
+/******详情类型判断*/
 .dx-info-default .dx-info-box.type-info input {
   border: 0;
   border-bottom: solid 1px #e6e6e6;
@@ -255,6 +258,10 @@ body {
   background-color: #6a96df;
   width: auto;
   color: #ffffff;
+}
+
+.layui-form-radio i:hover, .layui-form-radioed i {
+  color: #6a96df;
 }
 
 /*顶部操作栏*/

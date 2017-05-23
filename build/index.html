@@ -207,9 +207,9 @@ String.prototype.format = function (args) {
     version: true,
     base: 'layui_modules/'
   }).extend({
-    _route: '_route', // 通用模块
-    _ajax: '_ajax', // ajax请求模块
-    _config: '_config' // 配置模块
+    _route: 'route', // 通用模块
+    _ajax: 'ajax', // ajax请求模块
+    _config: 'config' // 配置模块
   });
 
   layui.use(['_route'], function () {

@@ -1,7 +1,9 @@
 'use strict';
 
-layui.define(function (exports) {
-  var _route = {
+layui.define(['layer', 'element'], function (exports) {
+  var layer = layui.layer
+    , element = layui.element()
+    , _route = {
     params: {}, // 当前页面地址参数
     config: { // 路由跳转配置
       base: '' // 模块路径配置
@@ -16,10 +18,9 @@ layui.define(function (exports) {
    * @constructor
    */
   _route.go = function (url, urlParams) {
-    var shade = $('.index-shade-ban');
-
-    // 显示遮罩层
-    shade.removeClass('layui-hide');
+    var shade = $('.index-shade-ban')
+      , progressNum = 0
+      , progressTimer = null;
 
     // 初始化链接参数
     _route.params = {};
@@ -30,15 +31,28 @@ layui.define(function (exports) {
 
     url = this.config.base ? this.config.base.format(url) : url;
 
+    // 显示进度条
+    /*$('#dx-progress-page').removeClass('layui-hide');
+
+    progressTimer = setInterval(function () {
+      progressNum = progressNum + Math.random() * 10 | 0;
+      element.progress('request-progress', progressNum + '%');
+    }, 300 + Math.random() * 1000);*/
+
     // 请求页面
     $.ajax({
       url: url,
       type: 'GET',
       complete: function () {
-        shade.addClass('layui-hide'); // 取消遮罩层
       },
       success: function (data) {
         $('#dx-content').html(data);
+        /*// 进度条全部加载
+        clearInterval(progressTimer);
+        element.progress('request-progress', '100%');
+        setTimeout(function () {
+          $('#dx-progress-page').addClass('layui-hide');
+        }, 300);*/
       }
     });
   };
