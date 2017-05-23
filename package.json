@@ -4,9 +4,9 @@
   "author": "d.xuffy",
   "description": "网站后台系统管理模版",
   "main": "fis-conf.js",
-  "homepage": "https://github.com/Xuffy/layui-WMS",
+  "homepage": "https://github.com/Xuffy/layui-wms",
   "bugs": {
-    "url": "https://github.com/Xuffy/layui-WMS/issues",
+    "url": "https://github.com/Xuffy/layuiwms/issues",
     "email": "d.xuffy@gamil.com"
   },
   "license": "MIT",

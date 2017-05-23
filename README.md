@@ -12,7 +12,6 @@
 依赖模块
 ===
 - `layui`
-- `jquery-1.12.1.min.js`
 - `underscore-min.js`
 
 启动说明
