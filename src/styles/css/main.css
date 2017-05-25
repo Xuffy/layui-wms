@@ -105,6 +105,10 @@ body {
   margin-left: 0;
 }
 
+.dx-btn-theme {
+  background-color: #6a96df;
+}
+
 /******详情类型判断*/
 .dx-info-default .dx-info-box.type-info input {
   border: 0;

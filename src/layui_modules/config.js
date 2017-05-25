@@ -18,6 +18,10 @@ layui.define(function (exports) {
   }['__fis.env'];
 
 
+  // 是否开启模拟数据
+  _config.isMock = false;
+
+
   //输出config接口
   exports('_config', _config);
 });

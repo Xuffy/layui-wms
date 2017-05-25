@@ -5,7 +5,7 @@ fis.hook('relative');
 
 fis
   .match('**', {relative: true})
-  .set('project.ignore', ['live/**', 'fis-conf.js', 'mock/**', 'build/**', 'README.md', 'package.json'])
+  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json','node_modules/**'])
   .match(/^\/src\/(.*)$/i, {
     useCache: false,
     release: '/$1'
@@ -36,6 +36,7 @@ fis
 
 fis
   .media('pro')
+  .set('project.ignore', ['/src/mock/**'])
   .match('*.js', {
     // optimizer: fis.plugin('uglify-js')
   })

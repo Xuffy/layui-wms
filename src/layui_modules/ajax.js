@@ -34,8 +34,12 @@ layui.define(['_config', 'element'], function (exports) {
   function ajaxCustom(params, config) {
     var progress_timer = progress('start');
 
-    config = config || {};
-    params.url = (config.base || _config.env.api) + params.url;
+    config = _.extend({
+      base: '', // 设置请求路径
+      isMock: _config.isMock // 是否开启模拟数据
+    }, config);
+
+    params.url = (config.base || (config.isMock ? '/' : _config.env.api)) + params.url;
 
     params.dataType = 'json';
     params.contentType = 'application/json';

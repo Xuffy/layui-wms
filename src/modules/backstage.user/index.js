@@ -1,11 +1,18 @@
 'use strict';
 
-layui.use(['form', 'laypage', '_route', '_ajax'], function () {
+layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
   var form = layui.form()
     , laypage = layui.laypage
     , _route = layui._route
     , _ajax = layui._ajax
-    , layer = layui.layer;
+    , layer = layui.layer
+    , _view = new layui._view('#dx-tpl');
+
+  _ajax.get({url:'test?a=1'}).then(function (data) {
+    console.log(data)
+  });
+
+  // console.log(_view.render())
 
   // 初始化当前位置
   _route.setBreadcrumb(['后台用户管理', '后台用户']);
@@ -38,12 +45,10 @@ layui.use(['form', 'laypage', '_route', '_ajax'], function () {
     }
   });
 
-
   // 监听增加按钮
   $('#add,.user-info,.user-update').on('click', function () {
     _route.go('backstage.user.info', {type: $(this).attr('dx-type')});
   });
-
 
   // 监听禁用按钮
   $('.user-ban').on('click', function () {
@@ -53,7 +58,6 @@ layui.use(['form', 'laypage', '_route', '_ajax'], function () {
       layer.msg('禁用了')
     });
   });
-
 
   // 监听提交按钮
   form.on('submit(search)', function (data) {

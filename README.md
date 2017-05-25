@@ -13,12 +13,14 @@
 ===
 - `layui`
 - `underscore-min.js`
+- `mock.js`
 
 启动说明
 ===
 ```
 // 安装开发环境
 $ npm i -g fis3
+$ npm i
 
 // 进入项目根目录
 $ cd **
@@ -35,6 +37,9 @@ $ npm run pro
 
 更新日志
 ===
+### v0.0.5
+* 增加mock平台，在`app.js`中调用`_config.isMock = true`开启mock。mock的具体使用请[查看`fis3`和`mockjs`文档](#docs)。
+
 ### v0.0.4
 * 请求时增加进度条显示。
 * 解决欢迎页面加载跳动问题
@@ -50,6 +55,6 @@ $ npm run pro
 * 扩展layui模块route.js，`支持左边菜单跳转`、`设置面包屑导航`，在`_route.params`里可获取地址参数(JSON格式)，在`_route.config`里可设置模块路径配置。
 * 模块化业务模块，modules目录下每个文件夹对应一个业务。
 
-文档
+<span id = "docs">文档</span>
 ===
-[layui官网](http://www.layui.com/)
+[layui官网](http://www.layui.com/) [Fis3官网](http://fis.baidu.com/fis3/index.html) [Mock.js官网](http://mockjs.com/)
