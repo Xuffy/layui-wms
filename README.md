@@ -57,4 +57,6 @@ $ npm run pro
 
 <span id = "docs">文档</span>
 ===
-[layui官网](http://www.layui.com/) [Fis3官网](http://fis.baidu.com/fis3/index.html) [Mock.js官网](http://mockjs.com/)
+[layui官网](http://www.layui.com/)
+[Fis3官网](http://fis.baidu.com/fis3/index.html)               
+[Mock.js官网](http://mockjs.com/)
