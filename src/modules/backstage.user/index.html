@@ -1,13 +1,13 @@
 <!--样式-->
 <link rel="stylesheet" href="index.css?__inline">
 
-<section class="dx-list-default" id="dx-tpl">
+<section class="dx-list-default">
   <div class="dx-operation-bar">
     <form class="layui-form">
 
       <div class="layui-form-item">
         <div class="layui-input-inline">
-          <input type="tel" name="username" lay-verify="username" placeholder="请输入用户名称{{ d.test }}" autocomplete="off"
+          <input type="tel" name="username" lay-verify="username" placeholder="请输入用户名称" autocomplete="off"
                  class="layui-input">
         </div>
       </div>
@@ -58,8 +58,10 @@
     </tr>
     </thead>
     <tbody>
+
+    {{# layui.each(d.list, function(index, item){ }}
     <tr>
-      <td>lanchong</td>
+      <td>{{item.user}}</td>
       <td>兰冲</td>
       <td>超级管理员</td>
       <td>客服部</td>
@@ -70,119 +72,10 @@
         <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
       </td>
     </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
-    <tr>
-      <td>lanchong</td>
-      <td>兰冲</td>
-      <td>超级管理员</td>
-      <td>客服部</td>
-      <td>13578899767</td>
-      <td class="table-operation-box">
-        <span class="table-operation user-info" dx-type="info"><i class="iconfont icon-chakan"></i></span>
-        <span class="table-operation user-update" dx-type="update"><i class="iconfont icon-xiugai"></i></span>
-        <span class="table-operation user-ban"><i class="iconfont icon-101"></i></span>
-      </td>
-    </tr>
+    {{# }); }}
     </tbody>
   </table>
 
   <div id="dx-page-default" class="dx-page-default"></div>
-</section>
 
-<!--脚本-->
-<script type="text/javascript" src="index.js?__inline"></script>
+</section>

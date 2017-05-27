@@ -34,27 +34,33 @@ layui.define(['layer', 'element'], function (exports) {
     // 显示进度条
     /*$('#dx-progress-page').removeClass('layui-hide');
 
-    progressTimer = setInterval(function () {
-      progressNum = progressNum + Math.random() * 10 | 0;
-      element.progress('request-progress', progressNum + '%');
-    }, 300 + Math.random() * 1000);*/
+     progressTimer = setInterval(function () {
+     progressNum = progressNum + Math.random() * 10 | 0;
+     element.progress('request-progress', progressNum + '%');
+     }, 300 + Math.random() * 1000);*/
+
+
+    $('#dx-content').html('<div id="dx-template"></div><script type="text/javascript" src="{0}"></script>'.format(url));
 
     // 请求页面
-    $.ajax({
-      url: url,
-      type: 'GET',
-      complete: function () {
-      },
-      success: function (data) {
-        $('#dx-content').html(data);
-        /*// 进度条全部加载
-        clearInterval(progressTimer);
-        element.progress('request-progress', '100%');
-        setTimeout(function () {
-          $('#dx-progress-page').addClass('layui-hide');
-        }, 300);*/
-      }
-    });
+    /* $.ajax({
+     url: url,
+     type: 'GET',
+     complete: function () {
+     },
+     success: function (data) {
+     console.log('****',data)
+     // console.log('++++','<div id="dx-template"></div><script>{0}</script>'.format(data))
+     $('#dx-content').append('<div id="dx-template"></div><script>{0}</script>'.format(data));
+     // $('#dx-content').html(data);
+     /!*!// 进度条全部加载
+     clearInterval(progressTimer);
+     element.progress('request-progress', '100%');
+     setTimeout(function () {
+     $('#dx-progress-page').addClass('layui-hide');
+     }, 300);*!/
+     }
+     });*/
   };
 
   /**

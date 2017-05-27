@@ -1,11 +1,15 @@
 'use strict';
 
-layui.use(['form', '_route'], function () {
+layui.use(['form', '_route', '_view'], function () {
   var form = layui.form()
     , _route = layui._route
     , layer = layui.layer
     , curPosition = ''
     , boxEle = $('.dx-info-box');
+
+
+  // 视图渲染
+  var _view = new layui._view({template: __inline('index.html')});
 
   // 状态判断
   switch (_route.params.type) {

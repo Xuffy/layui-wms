@@ -1,32 +1,50 @@
 'use strict';
 
-layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
+layui.use(['form', 'laypage', '_route', 'laydate', '_view', '_ajax'], function () {
   var form = layui.form()
     , laypage = layui.laypage
     , _route = layui._route
+    , layer = layui.layer
     , _ajax = layui._ajax
-    , layer = layui.layer;
+    , laydate = layui.laydate
+    , startTime
+    , endTime;
 
   // 初始化当前位置
-  _route.setBreadcrumb(['后台用户管理', '后台用户']);
+  _route.setBreadcrumb(['后台用户管理', '后台角色']);
 
   // 视图渲染
   var _view = new layui._view({
     template: __inline('index.html'),
     data: {
-      list: [],
-      pageSize: 0
+      list: []
     },
     before: function () {
       var _this = this;
       return _ajax.get({url: 'test?a=1'}).then(function (data) {
-        _this.data.list = data.list;
-        _this.data.pageSize = data.pageSize;
+        _this.data.list = data;
       });
     },
     event: addEvent
   });
 
+  // 监听时间选择
+  startTime = {
+    min: '1910-01-01 23:59:59',
+    max: '2099-01-01 23:59:59',
+    choose: function (datas) {
+      endTime.min = datas; //开始日选好后，重置结束日的最小日期
+      endTime.start = datas; //将结束日的初始值设定为开始日
+    }
+  };
+
+  endTime = {
+    min: '1910-01-01 23:59:59',
+    max: '2099-01-01 23:59:59',
+    choose: function (datas) {
+      startTime.max = datas; //结束日选好后，重置开始日的最大日期
+    }
+  };
 
   // 自定义验证规则
   form.verify({
@@ -42,7 +60,7 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
     }
   });
 
-  // 事件监听
+
   function addEvent() {
     // 渲染表单
     form.render();
@@ -50,27 +68,39 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
     // 分页初始化
     laypage({
       cont: 'dx-page-default'
-      , pages: _view.data.pageSize
+      , pages: 20
       , first: 1
-      , skin: '#6a96df'
       , jump: function (data) {
         layer.msg('显示第' + data.curr + '页');
       }
     });
 
-    // 监听增加按钮
-    $('#add,.user-info,.user-update').on('click', function () {
-      _route.go('backstage.user.info', {type: $(this).attr('dx-type')});
+    $('#startTime').on('click', function () {
+      startTime.elem = this;
+      laydate(startTime);
     });
 
+    $('#endTime').on('click', function () {
+      endTime.elem = this;
+      laydate(endTime);
+    });
+
+
+    // 监听增加按钮
+    $('#add,.user-info,.user-update').on('click', function () {
+      _route.go('backstage.role.info', {type: $(this).attr('dx-type')});
+    });
+
+
     // 监听禁用按钮
-    $('.user-ban').on('click', function () {
-      layer.confirm('确定禁用此账户吗？', {
-        btn: ['确定', '取消'] //可以无限个按钮
+    $('.user-delete').on('click', function () {
+      layer.confirm('确定删除此角色？', {
+        btn: ['确定', '取消']
       }, function (index, layero) {
-        layer.msg('禁用了')
+        layer.msg('删除了')
       });
     });
+
 
     // 监听提交按钮
     form.on('submit(search)', function (data) {
@@ -79,6 +109,7 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
       });
       return false;
     });
+
   }
 
 });
