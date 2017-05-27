@@ -35,8 +35,17 @@ $ npm run dev
 $ npm run pro
 ```
 
+扩展模块文档(layui_modules)
+===
+### view.js
+
 更新日志
 ===
+### v1.0.0
+* 页面加载方式修改为资源加载
+* modules下每个业务模块入口文件修改为index.js
+* 扩展layui模块view.js，实现视图渲染。
+
 ### v0.0.5
 * 增加mock平台，在`app.js`中调用`_config.isMock = true`开启mock。mock的具体使用请查看[fis3](http://fis.baidu.com/fis3/docs/node-mock.html)和[mockjs](http://mockjs.com/examples.html)文档。
 
