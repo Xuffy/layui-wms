@@ -18,7 +18,7 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
       pageSize: 8,
       pageNum: 1
     },
-    before: getListData,
+    // before: getListData,
     event: addEvent
   });
 
@@ -57,7 +57,7 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
       first: 1,
       skin: '#6a96df',
       jump: function (obj, first) {
-        !first && getListData(obj.curr);
+        // !first && getListData(obj.curr);
       }
     });
 

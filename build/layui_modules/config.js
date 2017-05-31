@@ -1,0 +1,1 @@
+"use strict";layui.define(function(o){var i={};i.env={mock:{api:"/",imageUrl:"/"},develop:{api:"http://192.168.0.200:8080/labpoo/",imageUrl:"http://192.168.0.200:8080/labpoo/system/showPic/"},production:{api:"/labpoo/",imageUrl:"/labpoo/system/showPic/"}}["production"],i.isMock=!1,o("_config",i)});

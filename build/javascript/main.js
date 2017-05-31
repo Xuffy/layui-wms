@@ -1,0 +1,1 @@
+"use strict";String.prototype.format=function(e){if(arguments.length>0){var r=this;if(1==arguments.length&&"object"==typeof e)for(var t in e)r=r.replace(new RegExp("({"+t+"})","g"),e[t]);else for(var n=0;n<arguments.length;n++){if(void 0==arguments[n])return"";var g=new RegExp("({["+n+"]})","g");r=r.replace(g,arguments[n])}return r}return this};
