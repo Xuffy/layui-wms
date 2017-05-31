@@ -7,7 +7,7 @@
 
 ---
 
-模版是基于layui前端UI框架，风格简单、舒适。
+模版是基于layui前端UI框架，风格简单、舒适。[模版展示](https://xuffy.github.io/layui-wms/)
 
 依赖模块
 ===
