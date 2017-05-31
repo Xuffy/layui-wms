@@ -7,6 +7,10 @@ layui.define(function (exports) {
    * 环境变量
    */
   _config.env = {
+    mock:{
+      api: '/',
+      imageUrl: '/'
+    },
     develop: {
       api: 'http://192.168.0.200:8080/labpoo/',
       imageUrl: 'http://192.168.0.200:8080/labpoo/system/showPic/'

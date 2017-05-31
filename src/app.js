@@ -29,7 +29,7 @@
     _route.config.base = 'modules/{0}/index.js';
 
     // 开启模拟数据
-    _config.isMock = true;
+    // _config.isMock = true;
 
   });
 

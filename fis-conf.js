@@ -19,6 +19,22 @@ fis
 // .match('**.{png,jpg,gif}', {optimizer: fis.plugin('png-compressor')});
 
 
+// 本地环境 默认使用mock
+fis
+  .media('mock')
+  .match('*', {
+    deploy: [
+      fis.plugin('replace', {
+        from: '__fis.env',
+        to: 'mock'
+      }),
+      fis.plugin('local-deliver', {
+        to: './live'
+      })
+    ]
+  });
+
+// 本地环境 默认不使用mock
 fis
   .media('dev')
   .match('*', {
@@ -33,12 +49,12 @@ fis
     ]
   });
 
-
+// 发布到线上环境
 fis
   .media('pro')
-  .set('project.ignore', ['/src/mock/**'])
+  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json','node_modules/**','/src/mock/**'])
   .match('*.js', {
-    // optimizer: fis.plugin('uglify-js')
+    optimizer: fis.plugin('uglify-js')
   })
   .match('*.css', {optimizer: fis.plugin('clean-css')})
   .match('*', {

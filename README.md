@@ -38,12 +38,68 @@ $ npm run pro
 扩展模块文档(layui_modules)
 ===
 ### view.js
+* template&nbsp;&nbsp;&nbsp;&nbsp;_view.template(html)
+ ```
+ HTML模版。暂时只支持接收html字符串，在配合fis3工具下使用__inline('index.html')引入HTML。
+ ```
+
+* data&nbsp;&nbsp;&nbsp;&nbsp;_view.data(params)
+ ```
+ 模板引擎数据。若视图中有需要渲染的数据，在初始化_view时params就必须传入对应的默认数据
+ ```
+
+* before&nbsp;&nbsp;&nbsp;&nbsp;_view.before()
+ ```
+ 模版渲染之前执行函数。若在渲染模版之前异步获取数据，需要将请求return给before函数。
+ 若不是异步获取则不需要return。
+ ```
+
+* complete&nbsp;&nbsp;&nbsp;&nbsp;_view.complete(view)
+ ```
+ 模版渲染完成后执行函数，返回view中所有对象。
+ ```
+
+* event&nbsp;&nbsp;&nbsp;&nbsp;_view.event(view)
+ ```
+ 添加dom元素事件，每次模版渲染完成后都会执行该函数。返回view中所有对象。
+ ```
+
+* 示例
+ ```
+ // 初始化view
+ var _view = new layui._view({
+    template: __inline('index.html'),
+    data: {
+      list: [{"user": "詹姆斯"}, {"user": "周杰伦"}],
+      pageSize: 8,
+      pageNum: 1
+    },
+    before: getListData,
+    event: addEvent
+  });
+  // 获取列表数据
+function getListData(pageNum) {
+  return _ajax.get({url: 'test', data: {pageNum: pageNum || 1}})
+  .then(function (data) {
+      _view.data.list = data.list;
+      _view.data.pageSize = data.pageSize;
+      _view.data.pageNum = data.pageNum;
+    });
+  }
+  // 添加事件
+  function addEvent(){
+	  // ...
+  }
+ ```
 
 更新日志
 ===
+### v1.0.1
+* 解决laytpl模块动态加载会多次调用接口问提。[laytpl文档](http://www.layui.com/doc/modules/laypage.html)
+
 ### v1.0.0
 * 页面加载方式修改为资源加载
-* modules下每个业务模块入口文件修改为index.js
+* `/src/modules`下每个业务模块入口文件修改为`index.js`
 * 扩展layui模块view.js，实现视图渲染。
 
 ### v0.0.5

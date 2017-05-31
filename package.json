@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "server": "fis3 server start --root ./live",
-    "dev": "fis3 release -cLw dev",
+    "dev": "fis3 release dev -cLw",
+    "mock": "fis3 release mock -cLw",
     "pro": "fis3 release pro"
   },
   "directories": {

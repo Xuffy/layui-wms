@@ -16,10 +16,10 @@ layui.define(['laytpl'], function (exports) {
     // 模版渲染之前执行函数
     _this.before = params.before;
 
-    // 模版渲染完成执行函数
+    // 模版渲染完成后执行函数
     _this.complete = params.complete;
 
-    // 添加dom元素事件，每次模版渲染完成都会执行该函数
+    // 添加dom元素事件，每次模版渲染完成后都会执行该函数
     _this.event = params.event;
 
 
@@ -27,13 +27,13 @@ layui.define(['laytpl'], function (exports) {
     before = _this.before && _this.before();
 
     if (before) {
-      before.then(function () {
+      before.then && before.then(function () {
         _this.render();
-        _this.complete && _this.complete();
+        _this.complete && _this.complete(_this);
       })
     } else {
       _this.render();
-      _this.complete && _this.complete();
+      _this.complete && _this.complete(_this);
     }
   }
 
@@ -50,8 +50,9 @@ layui.define(['laytpl'], function (exports) {
     laytpl(_this.template).render(data, function (html) {
       $('#dx-template').html(html);
       callback && callback();
-      _this.event && _this.event();
+      _this.event && _this.event(_this);
     });
+
   };
 
 

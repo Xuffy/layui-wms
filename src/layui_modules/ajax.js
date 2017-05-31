@@ -22,6 +22,7 @@ layui.define(['_config', 'element'], function (exports) {
    */
   _ajax.post = function (params, config) {
     params.type = 'POST';
+    params.data = JSON.stringify(params.data);
     return ajaxCustom(params, config);
   };
 
@@ -44,7 +45,6 @@ layui.define(['_config', 'element'], function (exports) {
     params.dataType = 'json';
     params.contentType = 'application/json';
 
-    params.data = JSON.stringify(params.data);
 
     // 数据返回
     return $.ajax(params)

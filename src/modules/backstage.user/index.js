@@ -14,18 +14,21 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
   var _view = new layui._view({
     template: __inline('index.html'),
     data: {
-      list: [],
-      pageSize: 0
+      list: [{"user": "詹姆斯"}, {"user": "周杰伦"}, {"user": "刘德华"}, {"user": "王宝强"}, {"user": "詹姆斯"}, {"user": "周杰伦"}, {"user": "刘德华"}, {"user": "王宝强"}, {"user": "詹姆斯"}],
+      pageSize: 8,
+      pageNum: 1
     },
-    before: function () {
-      var _this = this;
-      return _ajax.get({url: 'test?a=1'}).then(function (data) {
-        _this.data.list = data.list;
-        _this.data.pageSize = data.pageSize;
-      });
-    },
+    before: getListData,
     event: addEvent
   });
+
+  function getListData(pageNum) {
+    return _ajax.get({url: 'test', data: {pageNum: pageNum || 1}}).then(function (data) {
+      _view.data.list = data.list;
+      _view.data.pageSize = data.pageSize;
+      _view.data.pageNum = data.pageNum;
+    });
+  }
 
 
   // 自定义验证规则
@@ -43,18 +46,18 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
   });
 
   // 事件监听
-  function addEvent() {
+  function addEvent(view) {
     // 渲染表单
     form.render();
 
     // 分页初始化
     laypage({
-      cont: 'dx-page-default'
-      , pages: _view.data.pageSize
-      , first: 1
-      , skin: '#6a96df'
-      , jump: function (data) {
-        layer.msg('显示第' + data.curr + '页');
+      cont: 'dx-page-default',
+      pages: view.data.pageSize || 1,
+      first: 1,
+      skin: '#6a96df',
+      jump: function (obj, first) {
+        !first && getListData(obj.curr);
       }
     });
 
