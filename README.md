@@ -35,7 +35,7 @@ $ npm run dev
 $ npm run pro
 ```
 
-扩展模块文档(layui_modules)
+扩展模块(layui_modules)
 ===
 ### view.js
 * template&nbsp;&nbsp;&nbsp;&nbsp;_view.template(html)
@@ -94,6 +94,9 @@ function getListData(pageNum) {
 
 更新日志
 ===
+### v1.0.2
+* 解决view首次会渲染问题。在每次修改`_view.data`数据后，需调用`_view.render()`更新dom。
+
 ### v1.0.1
 * 解决laytpl模块动态加载会多次调用接口问提。[laytpl文档](http://www.layui.com/doc/modules/laypage.html)
 

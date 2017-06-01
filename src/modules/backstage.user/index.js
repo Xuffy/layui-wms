@@ -26,7 +26,8 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
     return _ajax.get({url: 'test', data: {pageNum: pageNum || 1}}).then(function (data) {
       _view.data.list = data.list;
       _view.data.pageSize = data.pageSize;
-      _view.data.pageNum = data.pageNum;
+      _view.data.pageNum = pageNum;
+      _view.render();
     });
   }
 
@@ -56,6 +57,7 @@ layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
       pages: view.data.pageSize || 1,
       first: 1,
       skin: '#6a96df',
+      curr: view.data.pageNum,
       jump: function (obj, first) {
         !first && getListData(obj.curr);
       }

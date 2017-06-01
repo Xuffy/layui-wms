@@ -28,11 +28,11 @@ layui.define(['laytpl'], function (exports) {
 
     if (before) {
       before.then && before.then(function () {
-        _this.render();
+        // _this.render();
         _this.complete && _this.complete(_this);
       })
     } else {
-      _this.render();
+      // _this.render();
       _this.complete && _this.complete(_this);
     }
   }
