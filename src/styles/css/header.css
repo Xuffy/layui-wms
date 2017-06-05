@@ -1,7 +1,7 @@
 .dx-header {
   border-bottom: none !important;
   height: 70px;
-  background-color: #242b33;
+  background-color: #242b33!important;
 }
 
 .dx-header .logo {
@@ -60,12 +60,12 @@
   padding-right: 30px;
 }
 
-.dx-nav li i {
+.dx-nav li span.icon i {
   font-size: 18px;
   color: #242b33;
 }
 
-.dx-nav li span:first-child {
+.dx-nav li span.icon {
   margin-right: 10px;
   display: inline-block;
   width: 38px;

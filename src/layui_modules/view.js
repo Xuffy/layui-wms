@@ -32,7 +32,7 @@ layui.define(['laytpl'], function (exports) {
         _this.complete && _this.complete(_this);
       })
     } else {
-      // _this.render();
+      _this.render();
       _this.complete && _this.complete(_this);
     }
   }

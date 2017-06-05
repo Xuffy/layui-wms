@@ -49,10 +49,11 @@
   border-left: solid 3px #404549;
 }
 
-.layui-nav-item > a {
+.dx-menu .layui-nav-item > a {
   background-color: #34393d !important;
 }
-.layui-nav-item > a:after{
+
+.dx-menu .layui-nav-item > a:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -62,28 +63,39 @@
   background-color: #3c4044;
 }
 
-  /*.layui-nav-itemed > a, .layui-nav-tree .layui-nav-title a, .layui-nav-tree .layui-nav-title a:hover {
-    background-color: #34393d !important;
-  }*/
+.dx-menu .layui-nav-itemed > a:after {
+  content: normal;
+}
 
-.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+.dx-menu .layui-nav-tree .layui-nav-child dd.layui-this,
+.dx-menu .layui-nav-tree .layui-this,
+.dx-menu .layui-nav-tree .layui-this > a,
+.dx-menu .layui-nav-tree .layui-this > a:hover {
   border-bottom-color: #6a96df !important;
 }
 
-.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover {
+.dx-menu .layui-nav-tree .layui-nav-child dd.layui-this,
+.dx-menu .layui-nav-tree .layui-this,
+.dx-menu .layui-nav-tree .layui-this > a,
+.dx-menu .layui-nav-tree .layui-this > a:hover {
   background-color: inherit;
 }
 
-.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd:hover {
+.dx-menu .layui-nav-tree .layui-nav-child dd.layui-this,
+.dx-menu .layui-nav-tree .layui-nav-child dd:hover {
   background-color: #6a96df;
   border-left: solid 3px #fab530;
 }
 
-.layui-nav-tree .layui-nav-child dd:hover a {
+.dx-menu .layui-nav-tree .layui-nav-child dd:hover a {
   border-bottom-color: #6a96df !important;
 }
 
 .dx-menu .layui-nav-tree .layui-nav-bar {
   background-color: #fab530;
   width: 3px;
+}
+
+.dx-menu .layui-nav-child dd:last-child a {
+  border-bottom: none;
 }

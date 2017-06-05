@@ -1,0 +1,96 @@
+/*********************header*/
+
+/*header背景颜色*/
+.dx-header {
+  background-color: #21262f !important;
+}
+
+/*logo和标题分割线*/
+.dx-header .logo:after, .dx-nav li:after {
+  background-color: #191f28;
+}
+
+/*标题样式*/
+.dx-header .title {
+  color: #646c7a;
+}
+
+/*右边用户名样式*/
+.dx-nav li,
+.dx-nav li a {
+  color: #d8d8d8;
+  font-size: 14px;
+}
+
+/*右边图标样式*/
+.dx-nav li span.icon {
+  /*background-color: #424e5c;*/
+}
+
+/*右边字体样式*/
+.dx-nav li span.icon i {
+  /*font-size: 18px;*/
+  /*color: #242b33;*/
+}
+
+/*****************end header*/
+
+/***********************menu*/
+
+/*菜单栏背景颜色*/
+.dx-menu {
+  background-color: #1c2029;
+}
+
+/*父菜单背景颜色*/
+.dx-menu .layui-nav-item > a {
+  background-color: #1c2029 !important;
+}
+
+/*子菜单样式*/
+.dx-menu .layui-nav-child dd {
+  background-color: #21262f;
+  border-left-color: #21262f;
+}
+
+.dx-menu .layui-nav-tree .layui-nav-child a {
+  border-bottom-color: #2f3237;
+}
+
+.dx-menu .layui-nav-tree .layui-nav-child dd.layui-this,
+.dx-menu .layui-nav-tree .layui-nav-child dd:hover {
+  background-color: #62615e;
+}
+
+.dx-menu .layui-nav-tree .layui-nav-child dd.layui-this,
+.dx-menu .layui-nav-tree .layui-this,
+.dx-menu .layui-nav-tree .layui-this > a,
+.dx-menu .layui-nav-tree .layui-this > a:hover,
+.dx-menu .layui-nav-tree .layui-nav-child dd:hover a {
+  border-bottom-color: #62615e !important;
+}
+
+/*******************end menu*/
+
+/***********************main*/
+
+.dx-breadcrumb {
+  background-color: #1c2029;
+}
+
+.dx-breadcrumb .layui-breadcrumb a cite,
+.dx-breadcrumb .layui-breadcrumb a span,
+.dx-breadcrumb .layui-breadcrumb a {
+  color: #c8c8c8 !important;
+}
+
+.dx-breadcrumb .layui-breadcrumb a cite,
+.dx-breadcrumb .layui-breadcrumb a:hover {
+  color: #f9bd1a !important;
+}
+
+.dx-module {
+  background-color: #d4d4d4;
+}
+
+/*******************end main*/

@@ -37,6 +37,47 @@ $ npm run pro
 
 扩展模块(layui_modules)
 ===
+### route.js
+* setBreadcrumb&nbsp;&nbsp;&nbsp;&nbsp;_route.setBreadcrumb(params[, setting])
+ ```
+ 每个模块应调用此方法显示当前位置导航。params显示导航参数,可配置导航点击后跳转业务模块。setting地址导航配置,现在可以配置是否显示导航。
+ ```
+ #####示例：
+ ```
+_route.setBreadcrumb(null, {hide: true}); //隐藏地址导航栏
+_route.setBreadcrumb(['前一级目录', '当前目录']); //不配置点击后跳转
+_route.setBreadcrumb(['前两级目录', {url: '业务模块路径', name: '前一级目录'}, '当前目录']); //配置点击后跳转
+ ```
+
+* go&nbsp;&nbsp;&nbsp;&nbsp;_route.go(url[, urlParams])
+ ```
+ 业务模块之间相互跳转。url指向业务模块名，urlParams所需要传递的参数。
+ ```
+ #####示例：
+ ```
+ _route.go('user',{id:1});
+ ```
+
+* config&nbsp;&nbsp;&nbsp;&nbsp;_route.config
+ ```
+ 设置跳转的业务模块路径，在app.js中配置。
+ ```
+ #####示例：
+ ```
+_route.config.base = 'modules/{0}/index.js';
+ ```
+
+* params&nbsp;&nbsp;&nbsp;&nbsp;_route.params
+ ```
+ 获取上个页面传递到当前页面的参数。
+ ```
+ #####示例：
+ ```
+_route.params.id获取id参数
+ ```
+
+
+===
 ### view.js
 * template&nbsp;&nbsp;&nbsp;&nbsp;_view.template(html)
  ```
@@ -94,6 +135,11 @@ function getListData(pageNum) {
 
 更新日志
 ===
+### v1.0.3
+* 增加主题样式文件`styles/css/default.theme.css`，可以自定义主题颜色，或新增主题样式文件。
+* 修改view.js若before函数未定义，视图初始化渲染后会自动调用`_view.render()`。
+* 将login.html页面移动到app.js同级，login.css移动到`styles/css/login.css`。
+
 ### v1.0.2
 * 解决view首次会渲染问题。在每次修改`_view.data`数据后，需调用`_view.render()`更新dom。
 
