@@ -37,7 +37,7 @@ $ npm run pro
 
 扩展模块(layui_modules)
 ===
-### route.js
+## route.js
 * setBreadcrumb&nbsp;&nbsp;&nbsp;&nbsp;_route.setBreadcrumb(params[, setting])
  ```
  每个模块应调用此方法显示当前位置导航。params显示导航参数,可配置导航点击后跳转业务模块。
@@ -76,8 +76,9 @@ _route.config.base = 'modules/{0}/index.js';
  ```
 _route.params.id获取id参数
  ```
-===
-### view.js
+ 
+ 
+## view.js
 * template&nbsp;&nbsp;&nbsp;&nbsp;_view.template(html)
  ```
  HTML模版。暂时只支持接收html字符串，在配合fis3工具下使用__inline('index.html')引入HTML。
