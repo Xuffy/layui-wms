@@ -76,8 +76,6 @@ _route.config.base = 'modules/{0}/index.js';
  ```
 _route.params.id获取id参数
  ```
-
-
 ===
 ### view.js
 * template&nbsp;&nbsp;&nbsp;&nbsp;_view.template(html)
