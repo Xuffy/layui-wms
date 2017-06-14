@@ -45,9 +45,12 @@ $ npm run pro
  ```
  示例：
  ```
-_route.setBreadcrumb(null, {hide: true}); //隐藏地址导航栏
-_route.setBreadcrumb(['前一级目录', '当前目录']); //不配置点击后跳转
-_route.setBreadcrumb(['前两级目录', {url: '业务模块路径', name: '前一级目录',data:'传递的参数'}, '当前目录']); //配置点击后跳转
+ //隐藏地址导航栏
+_route.setBreadcrumb(null, {hide: true}); 
+//不配置点击后跳转
+_route.setBreadcrumb(['前一级目录', '当前目录']); 
+//配置点击后跳转
+_route.setBreadcrumb(['前两级目录', {url: '业务模块路径', name: '前一级目录',data:'传递的参数'}, '当前目录']); 
  ```
 
 * go&nbsp;&nbsp;&nbsp;&nbsp;_route.go(url[, urlParams])
