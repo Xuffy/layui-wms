@@ -44,6 +44,7 @@ layui.define(['_config', 'element'], function (exports) {
 
     params.dataType = 'json';
     params.contentType = 'application/json';
+    params.timeout = params.timeout || 20000;
 
 
     // 数据返回

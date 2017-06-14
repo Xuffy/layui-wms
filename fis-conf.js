@@ -5,7 +5,7 @@ fis.hook('relative');
 
 fis
   .match('**', {relative: true})
-  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json','node_modules/**'])
+  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json', 'node_modules/**'])
   .match(/^\/src\/(.*)$/i, {
     useCache: false,
     release: '/$1'
@@ -15,6 +15,26 @@ fis
   })
   .match('/src/index.html', {
     release: '/index$1'
+  })
+  .match('**.css', {
+    preprocessor: fis.plugin('autoprefixer', { // 自动生成CSS3兼容前缀
+      "browsers": ["Android >= 2.1", "iOS >= 4", "ie >= 8", "firefox >= 15"],
+      "cascade": true
+    })
+  })
+  .match('**.js', {
+    preprocessor: [
+      fis.plugin('js-require-css')
+    ]
+  })
+  .match(/^\/src\/styles\/font\/(.*)\.(html|css)/i, {
+    release: false
+  })
+  .match(/^\/src\/styles\/css\/(header|index|menu)\.css/i, {
+    release: false
+  })
+  .match('/modules/**/*.{html,css}', {
+    release: false
   });
 // .match('**.{png,jpg,gif}', {optimizer: fis.plugin('png-compressor')});
 
@@ -52,7 +72,7 @@ fis
 // 发布到线上环境
 fis
   .media('pro')
-  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json','node_modules/**','/src/mock/**'])
+  .set('project.ignore', ['live/**', 'fis-conf.js', 'build/**', 'README.md', 'package.json', 'node_modules/**', '/src/mock/**'])
   .match('*.js', {
     optimizer: fis.plugin('uglify-js')
   })

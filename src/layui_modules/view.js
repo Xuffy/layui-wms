@@ -26,6 +26,10 @@ layui.define(['laytpl'], function (exports) {
     // 当是
     before = _this.before && _this.before();
 
+    // todo 视图局部渲染 待完成...
+    // console.log($(_this.template).find('#testDom').html());
+
+
     if (before) {
       before.then && before.then(function () {
         // _this.render();

@@ -10,6 +10,21 @@ layui.define(['layer', 'element'], function (exports) {
     }
   };
 
+  window.ROUTE_HISTORY_STACK = window.ROUTE_HISTORY_STACK || [];
+
+
+  // todo 路由历史栈 待完成...
+  function routeHistory() {
+    var rhs = ROUTE_HISTORY_STACK;
+
+    console.log(this)
+    /*this.setStack = function () {
+      if (rhs.length >= 5) {
+        _.rest(rhs);
+      }
+      rhs.push();
+    };*/
+  }
 
   /**
    * 左边菜单跳转
@@ -18,9 +33,7 @@ layui.define(['layer', 'element'], function (exports) {
    * @constructor
    */
   _route.go = function (url, urlParams) {
-    var shade = $('.index-shade-ban')
-      , progressNum = 0
-      , progressTimer = null;
+    var shade = $('.index-shade-ban');
 
     // 初始化链接参数
     _route.params = {};
@@ -31,36 +44,8 @@ layui.define(['layer', 'element'], function (exports) {
 
     url = this.config.base ? this.config.base.format(url) : url;
 
-    // 显示进度条
-    /*$('#dx-progress-page').removeClass('layui-hide');
-
-     progressTimer = setInterval(function () {
-     progressNum = progressNum + Math.random() * 10 | 0;
-     element.progress('request-progress', progressNum + '%');
-     }, 300 + Math.random() * 1000);*/
-
-
     $('#dx-content').html('<div id="dx-template"></div><script type="text/javascript" src="{0}"></script>'.format(url));
 
-    // 请求页面
-    /* $.ajax({
-     url: url,
-     type: 'GET',
-     complete: function () {
-     },
-     success: function (data) {
-     console.log('****',data)
-     // console.log('++++','<div id="dx-template"></div><script>{0}</script>'.format(data))
-     $('#dx-content').append('<div id="dx-template"></div><script>{0}</script>'.format(data));
-     // $('#dx-content').html(data);
-     /!*!// 进度条全部加载
-     clearInterval(progressTimer);
-     element.progress('request-progress', '100%');
-     setTimeout(function () {
-     $('#dx-progress-page').addClass('layui-hide');
-     }, 300);*!/
-     }
-     });*/
   };
 
   /**
@@ -70,7 +55,8 @@ layui.define(['layer', 'element'], function (exports) {
    * @constructor
    */
   _route.setBreadcrumb = function (params, setting) {
-    var htmlStr = '', set = setting || {};
+    var set = setting || {}
+      , ele = $('.layui-breadcrumb');
 
     if (set.hide) {
       return $('.dx-breadcrumb').addClass('layui-hide');
@@ -79,30 +65,29 @@ layui.define(['layer', 'element'], function (exports) {
     }
 
     if (!_.isEmpty(params)) {
+      ele.empty();
       _.map(params, function (val, index) {
-        var tFirst, tLast;
+        var $item;
+
+        val = _.isObject(val) ? val : {name: val};
+
 
         if (params.length === index + 1) {
-          tFirst = '<cite>';
-          tLast = '</cite></a>';
+          $item = $('<a href="javascript:void(0);"><cite>{0}</cite></a>'.format(val.name));
         } else {
-          tFirst = '';
-          tLast = '<span class="layui-box">&gt;</span></a>';
+          $item = $('<a href="javascript:void(0);">{0}<span class="layui-box">&gt;</span></a>'.format(val.name));
         }
 
-        if (_.isObject(val)) {
-          htmlStr += '<a href="javascript:void(0);" url="' + val.url + '">' + tFirst + val.name + tLast;
-        } else {
-          htmlStr += '<a href="javascript:void(0);">' + tFirst + val + tLast;
-        }
+        $item.data('route', val);
+
+        ele.append($item);
       });
-      $('.layui-breadcrumb').html(htmlStr);
 
       // 监听面包屑导航点击
       $('.dx-breadcrumb a').on('click', function () {
-        var url = $(this).attr('url');
-        if (!_.isEmpty(url)) {
-          _route.go(url);
+        var params = $(this).data('route');
+        if (!_.isEmpty(params.url)) {
+          _route.go(params.url, params.data | {});
         }
       });
     }

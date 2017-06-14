@@ -1,5 +1,6 @@
 'use strict';
 
+require('index.css');
 layui.use(['form', 'laypage', '_route', '_ajax', '_view'], function () {
   var form = layui.form()
     , laypage = layui.laypage

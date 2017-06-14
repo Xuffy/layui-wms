@@ -47,7 +47,7 @@ $ npm run pro
  ```
 _route.setBreadcrumb(null, {hide: true}); //隐藏地址导航栏
 _route.setBreadcrumb(['前一级目录', '当前目录']); //不配置点击后跳转
-_route.setBreadcrumb(['前两级目录', {url: '业务模块路径', name: '前一级目录'}, '当前目录']); //配置点击后跳转
+_route.setBreadcrumb(['前两级目录', {url: '业务模块路径', name: '前一级目录',data:'传递的参数'}, '当前目录']); //配置点击后跳转
  ```
 
 * go&nbsp;&nbsp;&nbsp;&nbsp;_route.go(url[, urlParams])
@@ -135,6 +135,11 @@ function getListData(pageNum) {
 
 更新日志
 ===
+### v1.0.4
+* 优化route.js模块，面包屑导航可以传入`data`到其他业务模块。
+* 默认设置请求20s超时，可自定义。
+* fis配置优化，打包去掉多余文件。
+
 ### v1.0.3
 * 增加主题样式文件`styles/css/default.theme.css`，可以自定义主题颜色，或新增主题样式文件。
 * 修改view.js若before函数未定义，视图初始化渲染后会自动调用`_view.render()`。

@@ -1,5 +1,5 @@
 {
-  "name": "dx-system-template",
+  "name": "layui-wms",
   "version": "1.0.0",
   "author": "d.xuffy",
   "description": "网站后台系统管理模版",
@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "server": "fis3 server start --root ./live",
+    "stop": "fis3 server stop",
     "dev": "fis3 release dev -cLw",
     "mock": "fis3 release mock -cLw",
     "pro": "fis3 release pro"
@@ -21,6 +22,8 @@
     "build": "./build"
   },
   "dependencies": {
+    "fis3-preprocessor-autoprefixer": "^0.1.1",
+    "fis3-preprocessor-js-require-css": "^0.1.1",
     "mockjs": "^1.0.1-beta3"
   }
 }
