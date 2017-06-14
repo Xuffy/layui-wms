@@ -33,7 +33,7 @@ fis
   .match(/^\/src\/styles\/css\/(header|index|menu)\.css/i, {
     release: false
   })
-  .match('/modules/**/*.{html,css}', {
+  .match('/src/modules/**/*.{html,css}', {
     release: false
   });
 // .match('**.{png,jpg,gif}', {optimizer: fis.plugin('png-compressor')});
