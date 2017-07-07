@@ -6,11 +6,12 @@
 </p>
 
 ---
+###【系统模版已重构】
+[获取重构后源码](https://github.com/Xuffy/dx-wms)
 
 模版是基于layui前端UI框架，风格简单、舒适。[模版展示](https://xuffy.github.io/layui-wms/)
 
 依赖模块
-===
 - `layui`
 - `underscore-min.js`
 - `mock.js`
